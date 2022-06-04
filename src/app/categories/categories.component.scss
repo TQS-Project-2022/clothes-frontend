@@ -1,0 +1,30 @@
+.categories-div {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: row;
+
+  &__category-btn {
+    margin: 0 15px;
+    display: block;
+    min-width: 70px;
+    padding: 20px;
+    border-radius: 100px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #EDEDF0;
+    }
+
+  }
+}
+
+.category-active {
+  background-color: #9DC2FF;
+}

@@ -1,0 +1,73 @@
+.login-header {
+  width: 100%;
+  padding-top: 25px;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+
+  &__logo {
+    font-size: 36px;
+    cursor: pointer;
+  }
+
+  &__create-account {
+    margin-left: 10%;
+    margin-top: 5px;
+    a {
+      color: #5A5B6A;
+      font-size: 28px;
+    }
+  }
+}
+
+.login-form {
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50% );
+  box-shadow: 0 2px 4px rgba(27, 78, 163, 0.2), 0 4px 8px rgba(41, 121, 255, 0.2);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    margin-top: 15px;
+    color: #2264D1;
+    font-size: 36px;
+  }
+
+  &__container {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .label {
+      color: #2264D1;
+      display: block;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      background-color: #EDEDF0;
+      border-radius: 99px;
+      padding: 5px 10px;
+      display: block;
+      margin-left: 15px;
+    }
+  }
+
+  &__btn {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #9DC2FF;
+    font-weight: bold;
+    color: #2264D1;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+}

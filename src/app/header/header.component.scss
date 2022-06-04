@@ -1,0 +1,51 @@
+.header-container {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding-top: 25px;
+
+  &__logo {
+    font-size: 36px;
+  }
+
+  &__search-bar {
+    margin-left: 20%;
+    width: 20%;
+
+    &__input {
+      font-size: 28px;
+      background-color: #EDEDF0;
+      outline: none;
+      font-weight: lighter;
+      border: none;
+      color: #19191D99;
+      padding: 5px 10px;
+      border-radius: 100px;
+    }
+  }
+
+  &__log-in {
+    min-width: 100px;
+    margin-left: 20%;
+    a {
+      text-decoration: none;
+      font-size: 28px;
+      border: 1px solid #2264D1;
+      padding: 5px;
+      margin-top: 10px;
+      color: #2264D1;
+      border-radius: 5px;
+    }
+  }
+
+  &__create-account {
+    margin-left: 10%;
+    min-width: 150px;
+    a {
+      color: #5A5B6A;
+      font-size: 28px;
+    }
+  }
+}
