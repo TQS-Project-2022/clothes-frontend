@@ -1,0 +1,27 @@
+.product-miniature {
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__name {
+    color: #19191D;
+    font-family: 'Inter', serif;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-family: 'Inter', serif;
+    font-size: 28px;
+    margin-top: 10px;
+  }
+
+  &__ship-price {
+    color: #787885;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+}
