@@ -8,6 +8,7 @@ import {of} from "rxjs";
 export class ProductsService {
 
   private _activeCategory = "shoes";
+  private _searchFilter = "";
 
   constructor() { }
 
@@ -17,6 +18,14 @@ export class ProductsService {
 
   get activeCategory(): string {
     return this._activeCategory;
+  }
+
+  get searchFilter(): string {
+    return this._searchFilter;
+  }
+
+  set searchFilter(value: string) {
+    this._searchFilter = value;
   }
 
   getProducts(){
@@ -29,7 +38,7 @@ export class ProductsService {
     }
 
     let p2: Product =  {
-      id: 1,
+      id: 2,
       name: "Dirty T-shirt",
       price: 12.99,
       shipPrice: 0,
@@ -37,17 +46,32 @@ export class ProductsService {
     }
 
     let p3: Product =  {
-      id: 1,
+      id: 3,
+      name: "Stolen Jacket",
+      price: 129,
+      shipPrice: 2,
+      category: 'jackets'
+    }
+    let p4: Product =  {
+      id: 4,
+      name: "Dirty T-shirt",
+      price: 12.99,
+      shipPrice: 0,
+      category: 't-shirts'
+    }
+
+    let p5: Product =  {
+      id: 5,
       name: "Stolen Jacket",
       price: 129,
       shipPrice: 2,
       category: 'jackets'
     }
 
-    let arr = [p1,p2,p3,p1,p3];
+    let arr = [p1,p2,p3,p4,p5];
 
     if(this.activeCategory != "all")
-      arr = [p1,p2,p3,p1,p3].filter(p => p.category == this.activeCategory);
+      arr = arr.filter(p => p.category == this.activeCategory);
 
     return of(arr);
   }

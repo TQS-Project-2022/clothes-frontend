@@ -31,8 +31,10 @@ import {ProductEffects} from "./store/products/product.effects";
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    //StoreModule.forRoot({products: productReducer}),
-    //EffectsModule.forRoot([ProductEffects])
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    StoreModule.forFeature("products", productReducer),
+    EffectsModule.forFeature([ProductEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {of} from "rxjs";
 import {ProductsService} from "../services/products.service";
+import {Store} from "@ngrx/store";
+import {getAllProducts} from "../store/products/product.actions";
 
 @Component({
   selector: 'app-categories',
@@ -11,7 +13,8 @@ export class CategoriesComponent {
 
   categories$;
 
-  constructor(public productService: ProductsService) {
+  constructor(public productService: ProductsService,
+              private store$: Store) {
     this.categories$ = this.getCategories();
   }
 
@@ -21,6 +24,7 @@ export class CategoriesComponent {
 
   selectCategory(category: string){
     this.productService.activeCategory = category;
+    this.store$.dispatch(getAllProducts());
   }
 
 }
