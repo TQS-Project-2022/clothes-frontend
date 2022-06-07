@@ -14,14 +14,13 @@ export class ProductListComponent implements OnInit{
   products$;
 
   constructor(private productService: ProductsService,
-              // private store$: Store
+              private store$: Store
   ) {
-    //this.products$ = this.store$.select(selectAllProducts);
-    this.products$ = this.productService.getProducts();
+    this.products$ = this.store$.select(selectAllProducts);
   }
 
   ngOnInit() {
-    // this.store$.dispatch(getAllProducts());
+    this.store$.dispatch(getAllProducts());
   }
 
 }
