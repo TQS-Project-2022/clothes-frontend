@@ -15,6 +15,10 @@ import {StoreModule} from "@ngrx/store";
 import {productReducer} from "./store/products/product.reducer";
 import {EffectsModule} from "@ngrx/effects";
 import {ProductEffects} from "./store/products/product.effects";
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import {HttpClientModule} from "@angular/common/http";
+import { AddProductComponent } from './add-product/add-product.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -25,16 +29,20 @@ import {ProductEffects} from "./store/products/product.effects";
     LoginPageComponent,
     RegisterPageComponent,
     ProductListComponent,
-    ProductMiniatureComponent
+    ProductMiniatureComponent,
+    ProductDetailsComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreModule.forFeature("products", productReducer),
-    EffectsModule.forFeature([ProductEffects]),
+    EffectsModule.forFeature([ProductEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
