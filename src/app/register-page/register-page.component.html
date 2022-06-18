@@ -1,0 +1,33 @@
+<div class="register-header">
+  <div class="register-header__logo" (click)="navigateToMainPage()">
+    FashionApp
+  </div>
+  <div class="register-header__create-account">
+    <a href="login">Log In</a>
+  </div>
+</div>
+
+<div class="register-form">
+  <form [formGroup]="registerForm">
+    <h1 class="register-form__header">Create Account</h1>
+    <div class="register-form__container">
+      <label for="register-username" class="label">Username</label>
+      <input type="text" id="register-username" formControlName="username">
+    </div>
+    <div class="register-form__container">
+      <label for="register-email" class="label">Email</label>
+      <input type="email" id="register-email" formControlName="email">
+    </div>
+    <div class="register-form__container">
+      <label for="register-age" class="label">Age</label>
+      <input type="text" id="register-age" formControlName="age">
+    </div>
+    <div class="register-form__container">
+      <label for="register-password" class="label">Password</label>
+      <input type="password" id="register-password" formControlName="password">
+    </div>
+    <button class="register-form__btn" (click)="register()" [disabled]="!registerForm.valid">
+      Create Account
+    </button>
+  </form>
+</div>

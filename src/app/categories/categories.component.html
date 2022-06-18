@@ -1,0 +1,9 @@
+<div class="categories-div">
+  <div class="categories-container">
+    <div *ngFor="let category of (categories$ | async)"
+         class="categories-container__category-btn" [class.category-active]="productService.activeCategory == category"
+    (click)="selectCategory(category)">
+      {{category}}
+    </div>
+  </div>
+</div>
