@@ -1,5 +1,5 @@
 <div class="products-div">
   <div *ngFor="let product of (products$ | async)" class="product-miniature">
-    <app-product-miniature [product]="product"></app-product-miniature>
+    <app-product-miniature *ngIf="isActiveCategory(product.category)" [product]="product"></app-product-miniature>
   </div>
 </div>

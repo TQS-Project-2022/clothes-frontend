@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div *ngIf="(order$ | async) as order" class="order-details-container">
+  <h1>Your order: </h1>
+  <p>Status: </p><b *ngIf="order.delivered">delivered</b><b *ngIf="!order.delivered">not delivered</b>
+  <div *ngIf="(product$ | async) as product">
+    <p>Product name: {{product.name}}</p>
+    <p>Price: {{product.price}}</p>
+    <p>Delivery price: {{product.shipPrice}}</p>
+  </div>
+  <h2>Your rider: </h2>
+  <p>{{order.rider.name}}</p>
+
+  <button (click)="confirmDelivery()" *ngIf="!order.delivered">Confirm delivery</button>
+</div>

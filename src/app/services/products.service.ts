@@ -12,6 +12,8 @@ export class ProductsService {
   private _activeCategory = "shoes";
   private _searchFilter = "";
 
+  private categories = ['all', 'shoes', 't-shirts', 'hats', 'jackets', 'jeans', 'dresses', 'others'];
+
   constructor(private http: HttpClient) { }
 
   set activeCategory(value: string) {
@@ -28,6 +30,10 @@ export class ProductsService {
 
   set searchFilter(value: string) {
     this._searchFilter = value;
+  }
+
+  getCategories(): Observable<string[]>{
+    return of(this.categories);
   }
 
   getProducts(): Observable<Product[]>{

@@ -15,11 +15,7 @@ export class CategoriesComponent {
 
   constructor(public productService: ProductsService,
               private store$: Store) {
-    this.categories$ = this.getCategories();
-  }
-
-  getCategories(){
-    return of(['all', 'shoes', 't-shirts', 'hats', 'jackets', 'jeans', 'dresses', 'others']);
+    this.categories$ = this.productService.getCategories();
   }
 
   selectCategory(category: string){

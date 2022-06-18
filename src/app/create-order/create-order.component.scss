@@ -1,0 +1,27 @@
+.create-order-content {
+  width: 50%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-top: 1px solid #5A5B6A;
+
+  &__header {
+    font-weight: lighter;
+    margin-bottom: 30px;
+  }
+
+  &__btn-confirm {
+    outline: none;
+    padding: 20px;
+    font-size: 24px;
+  }
+
+  &__error-msg {
+    color: red;
+  }
+}

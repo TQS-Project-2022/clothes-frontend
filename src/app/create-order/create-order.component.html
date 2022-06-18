@@ -1,0 +1,5 @@
+<div class="create-order-content">
+  <h1 class="create-order-content__header">Creating an order</h1>
+  <button class="create-order-content__btn-confirm" (click)="createOrder()">Confirm</button>
+  <p *ngIf="errorMessage" class="create-order-content__error-msg">{{errorMessage}}</p>
+</div>

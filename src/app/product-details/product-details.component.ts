@@ -15,6 +15,8 @@ export class ProductDetailsComponent implements OnInit {
 
   selectedProduct$: Observable<Product | undefined>;
 
+  createOrderDiv = false;
+
   constructor(private store$: Store,
               private route: ActivatedRoute) {
     this.selectedProduct$ = this.store$.select(selectSelectedProduct);
@@ -23,6 +25,14 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get("id"));
     this.store$.dispatch(selectProduct({id}));
+  }
+
+  showOrderDiv(){
+    this.createOrderDiv = true;
+  }
+
+  closeOrderDiv(){
+    this.createOrderDiv = false;
   }
 
 }

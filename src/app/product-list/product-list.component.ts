@@ -13,7 +13,7 @@ export class ProductListComponent implements OnInit{
 
   products$;
 
-  constructor(private productService: ProductsService,
+  constructor(public productService: ProductsService,
               private store$: Store
   ) {
     this.products$ = this.store$.select(selectAllProducts);
@@ -21,6 +21,11 @@ export class ProductListComponent implements OnInit{
 
   ngOnInit() {
     this.store$.dispatch(getAllProducts());
+  }
+
+  isActiveCategory(category: string): boolean {
+    if(this.productService.activeCategory == "all") return true;
+    else return category == this.productService.activeCategory;
   }
 
 }

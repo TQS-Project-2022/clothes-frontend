@@ -19,6 +19,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import {HttpClientModule} from "@angular/common/http";
 import { AddProductComponent } from './add-product/add-product.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { CreateOrderComponent } from './create-order/create-order.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ProductListComponent,
     ProductMiniatureComponent,
     ProductDetailsComponent,
-    AddProductComponent
+    AddProductComponent,
+    CreateOrderComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,8 @@ import {CreateProductDto} from "../../model/CreateProductDto";
 import {Store} from "@ngrx/store";
 import {addProduct} from "../store/products/product.actions";
 import {Router} from "@angular/router";
+import {Observable} from "rxjs";
+import {ProductsService} from "../services/products.service";
 
 @Component({
   selector: 'app-add-product',
@@ -18,9 +20,14 @@ export class AddProductComponent implements OnInit {
     category: ['', Validators.required],
   });
 
+  categories$: Observable<string[]>;
+
   constructor(private formBuilder: FormBuilder,
               private store$: Store,
-              private router: Router) { }
+              private router: Router,
+              private productService: ProductsService) {
+    this.categories$ = this.productService.getCategories();
+  }
 
   ngOnInit(): void {
   }
