@@ -4,4 +4,5 @@ export interface Product {
   price: number;
   shipPrice: number;
   category: string;
+  sellerId: number;
 }

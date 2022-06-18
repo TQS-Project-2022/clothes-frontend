@@ -1,4 +1,4 @@
-<div *ngIf="product">
+<div *ngIf="product" (click)="redirectToDetails(product.id)">
   <img src="assets/images/shoes1.jpeg" class="product-miniature__image"  alt="product image"/>
   <div class="product-miniature__name">{{product.name}}</div>
   <div class="product-miniature__price">{{product.price}}$</div>

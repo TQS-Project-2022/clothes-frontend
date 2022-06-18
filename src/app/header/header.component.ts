@@ -1,7 +1,8 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {ProductsService} from "../services/products.service";
 import {FormControl} from "@angular/forms";
 import {debounceTime, distinctUntilChanged, tap} from "rxjs";
+import {Router} from "@angular/router";
+import {AddProductComponent} from "../add-product/add-product.component";
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit, AfterViewInit{
 
   filter = new FormControl();
 
-  constructor(private productService: ProductsService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +28,10 @@ export class HeaderComponent implements OnInit, AfterViewInit{
 
   updateSearchFilter(filter: string){
 
+  }
+
+  redirectToMainPage() {
+    this.router.navigate(['']);
   }
 
 }

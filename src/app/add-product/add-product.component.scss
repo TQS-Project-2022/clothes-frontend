@@ -1,0 +1,14 @@
+.add-product-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(27, 78, 163, 0.2), 0 4px 8px rgba(41, 121, 255, 0.2);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+
+.add-product-form > * {
+  margin: 20px 0;
+}
