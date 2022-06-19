@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 import {FormBuilder, Validators} from "@angular/forms";
+import {AuthService} from "../services/auth.service";
+import {TokenStorageService} from "../services/token-storage.service";
 
 @Component({
   selector: 'app-register-page',
@@ -17,7 +19,8 @@ export class RegisterPageComponent {
   })
 
   constructor(private router: Router,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private authService: AuthService) { }
 
   navigateToMainPage() {
     this.router.navigate([''])
@@ -29,9 +32,15 @@ export class RegisterPageComponent {
     let age = this.registerForm.value.age;
     let password = this.registerForm.value.password;
 
-    console.log(username, email, age, password);
+    if(!username || !password) return;
 
-    this.router.navigate(['login'])
+    this.authService.register(username, password).subscribe({
+      next: data => {
+        this.router.navigate(['login']);
+      }
+    })
+
+
   }
 
 }

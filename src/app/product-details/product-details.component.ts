@@ -5,6 +5,7 @@ import {selectProduct} from "../store/products/product.actions";
 import {selectSelectedProduct} from "../store/products/product.selectors";
 import {Observable} from "rxjs";
 import {Product} from "../../model/Product";
+import {TokenStorageService} from "../services/token-storage.service";
 
 @Component({
   selector: 'app-product-details',
@@ -18,7 +19,8 @@ export class ProductDetailsComponent implements OnInit {
   createOrderDiv = false;
 
   constructor(private store$: Store,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              public tokenStorage: TokenStorageService) {
     this.selectedProduct$ = this.store$.select(selectSelectedProduct);
   }
 

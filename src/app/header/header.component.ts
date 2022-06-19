@@ -3,6 +3,7 @@ import {FormControl} from "@angular/forms";
 import {debounceTime, distinctUntilChanged, tap} from "rxjs";
 import {Router} from "@angular/router";
 import {AddProductComponent} from "../add-product/add-product.component";
+import {TokenStorageService} from "../services/token-storage.service";
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit, AfterViewInit{
 
   filter = new FormControl();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              public tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
   }

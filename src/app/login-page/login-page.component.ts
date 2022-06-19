@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {FormBuilder, Validators} from "@angular/forms";
+import {AuthService} from "../services/auth.service";
+import {TokenStorageService} from "../services/token-storage.service";
 
 @Component({
   selector: 'app-login-page',
@@ -15,7 +17,9 @@ export class LoginPageComponent implements OnInit {
   });
 
   constructor(private router: Router,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private authService: AuthService,
+              private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
   }
@@ -27,8 +31,17 @@ export class LoginPageComponent implements OnInit {
   logIn(){
     let username = this.loginForm.value.username;
     let password = this.loginForm.value.password;
-    console.log(username, password);
-    this.router.navigate(['']);
+    if(!username || !password) return;
+
+    this.authService.login(username, password).subscribe({
+      next: data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+        this.router.navigate(['']);
+      }
+    })
+
+
   }
 
 }

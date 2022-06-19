@@ -21,6 +21,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { CreateOrderComponent } from './create-order/create-order.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
+import { authInterceptorProviders } from './services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { OrderDetailsComponent } from './order-details/order-details.component';
     StoreModule.forFeature("products", productReducer),
     EffectsModule.forFeature([ProductEffects])
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
