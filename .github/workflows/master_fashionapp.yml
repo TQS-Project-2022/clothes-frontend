@@ -50,4 +50,4 @@ jobs:
           app-name: 'fashionapp'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_d8771d894e674716a640bc4e66ef7737 }}
-          package:
+          package: ./dist/clothes-frontend
