@@ -3,7 +3,7 @@
   <img src="assets/images/shoes1.jpeg" class="details-container__image"  alt="product image"/>
   <h1 class="details-container__header">{{selectedProduct.name}}</h1>
   <h2 class="details-container__price">Price: {{selectedProduct.price}}$</h2>
-  <button class="details-container__order-btn" (click)="showOrderDiv()">Order</button>
+  <button *ngIf="tokenStorage.getToken()" class="details-container__order-btn" (click)="showOrderDiv()">Order</button>
 
   <app-create-order *ngIf="createOrderDiv" [productId]="selectedProduct.id"></app-create-order>
 </div>
